@@ -1,0 +1,11 @@
+/* api/public/styles.css */
+body { font-family: system-ui, Arial; background:#f7f8fb; color:#111; margin:0; padding:24px; }
+.container { max-width:1100px; margin:0 auto; }
+h1 { margin:0 0 16px 0; }
+.form { display:flex; gap:8px; margin-bottom:12px; }
+.form input { padding:8px; border:1px solid #ddd; border-radius:4px; flex:1; }
+.form button { padding:8px 12px; }
+table { width:100%; border-collapse:collapse; background:#fff; box-shadow: 0 0 6px rgba(0,0,0,0.03); }
+th,td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
+.up { color: green; font-weight:600; }
+.down { color: red; font-weight:600; }
