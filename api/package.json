@@ -15,5 +15,17 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  
+  "name": "api",
+  "version": "1.0.0",
+  
+  "main": "server.js",
+   "license": "MIT",
+   "scripts": {
+   "migrate": "node ../scripts/migrate.js",
+   "start": "node server.js"
+   }
+
+
 }

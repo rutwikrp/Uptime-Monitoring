@@ -14,5 +14,16 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "name": "worker",
+  "version": "1.0.0",
+
+  "main": "worker.js",
+  "license": "MIT",
+  "scripts": {
+    "migrate": "node ../scripts/migrate.js",
+     "start": "node worker.js"
+   }
+
+
 }
