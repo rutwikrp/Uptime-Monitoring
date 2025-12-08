@@ -2,19 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Uptime Monitor</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uptime Monitor</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="container">
     <h1>Uptime Monitor</h1>
 
-    <form id="addForm" class="form">
+    <!-- Note: button is type="button" to avoid native form submit navigation -->
+    <form id="addForm" class="form" onsubmit="return false;">
       <input id="name" placeholder="Name (optional)" />
       <input id="url" placeholder="https://example.com" required />
       <input id="interval" placeholder="Interval (s, default 60)" />
-      <button type="submit">Add Monitor</button>
+      <button id="addBtn" type="button">Add URL</button>
     </form>
 
     <table id="monitors">
@@ -25,6 +26,7 @@
     </table>
   </div>
 
+  <!-- load script at the end so DOM exists -->
   <script src="/main.js"></script>
 </body>
 </html>

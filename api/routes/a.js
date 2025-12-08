@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Health check liveliness
+// Health check endpoint (liveness)
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
@@ -257,6 +257,8 @@ app.get('*', (req, res) => {
   }
   res.sendFile(path.join(staticPath, 'index.html'));
 });
+
+// ==================== ERROR HANDLING ====================
 
 // Error handling middleware
 app.use((err, req, res, next) => {
