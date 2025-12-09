@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . .
 
 # install only worker deps
-RUN cd worker && npm ci --production
+RUN npm ci --production
 
 RUN chown -R app:app /app
 USER app

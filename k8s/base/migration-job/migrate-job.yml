@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate-job
+  namespace: uptime-monitor
+  labels:
+    app: migrate
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      name: migrate
+      labels:
+        app: migrate
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: migrate
+          # image must contain project root (scripts/migrate.js + migrations/)
+          image: rutwikrp/uptime-monitoring-api:latest
+          imagePullPolicy: IfNotPresent
+          command: ["node", "scripts/migrate.js"]
+          envFrom:
+            - secretRef:
+                name: uptime-secrets
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+  ttlSecondsAfterFinished: 300
