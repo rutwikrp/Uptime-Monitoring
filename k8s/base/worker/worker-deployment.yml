@@ -27,7 +27,7 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: worker
-          image: rutwikrp/uptime-worker
+          image: rutwikrp/uptime-worker:latest
           imagePullPolicy: IfNotPresent
           # run the worker loop
           command: ["node", "worker/worker.js"]
