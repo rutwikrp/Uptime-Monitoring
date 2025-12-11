@@ -1,4 +1,3 @@
-# Uptime-Monitoring
 # Uptime Monitoring System
 
 A robust, self-hosted uptime monitoring service built with Node.js, PostgreSQL, and Docker. This system allows you to monitor the availability and performance of your websites, APIs, and services with configurable alerts and dashboards.
