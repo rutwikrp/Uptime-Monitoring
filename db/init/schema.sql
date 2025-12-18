@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS monitors (
+  id SERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'UNKNOWN',
+  last_checked TIMESTAMP,
+  created_at TIMESTAMP DEFAULT NOW()
+);
