@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-init
+  namespace: uptime
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: init-db
+          image: postgres:16
+          env:
+            - name: PGPASSWORD
+              value: postgres
+          command:
+            - sh
+            - -c
+            - |
+              psql \
+                -h postgres \
+                -U postgres \
+                -d uptime_monitor \
+                -f /schema/schema.sql
+          volumeMounts:
+            - name: schema
+              mountPath: /schema
+      volumes:
+        - name: schema
+          configMap:
+            name: db-schema
